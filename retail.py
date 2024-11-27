@@ -2,22 +2,28 @@ import curses
 import json
 import os
 import re
+import ParameterSingleton
+from StringUtily import TerminalStatus, TransactionStatus
+from TransactionData import TransactionData
 import sslclient as client
 import threading
 import time
 import LoggerManager
-import Constants
 
-# File to store the settings
-SETTINGS_FILE = 'settings_combined.json'
+
 
 # Options
-mode_options = ['Retail', 'Pay at Table']
+mode_options = ['Start heartbeat', 'Stop heartbeat']
 error_options = ['Enable Declines', 'Enable Cancellations', 'Stop Response','None']
+
+#add terinal status options
+terminal_status = ['IDLE','BUSY']
 
 # Initialize selections
 selected_radio = 0  # Default selected radio option
 selected_error_radio = 3  # Default selected error option
+selected_terminal_status = 0 # Default selected terminal status
+
 button_selected = False  # Tracks if the start button is selected
 
 
@@ -38,48 +44,12 @@ features = {
     "Split Amount": "0.00",
 }
 
-# Default credentials
+
 credentials = {
-    "TID":"12300337",
-    "Auth Key":"fe0d12c9-2b21-41d1-abe3-cbabfbdff567"
+    "TID": "",
+    "Auth Key": ""
 }
 
-def save_credentials_to_json():
-    # Create the 'cfg' folder if it doesn't exist
-    cfg_folder = 'cfg'
-    if not os.path.exists(cfg_folder):
-        os.makedirs(cfg_folder)
-    
-    # Path to the settings file within the 'cfg' folder
-    file_path = os.path.join(cfg_folder, SETTINGS_FILE)
-    
-    # Save the credentials to the JSON file
-    with open(file_path, 'w') as file:
-        json.dump({"credentials": credentials}, file, indent=4)  # Save only credentials
-
-# Function to call when saving is needed (e.g., after modifying credentials)
-def update_credentials_and_save():
-    # Save the updated credentials to the file
-    save_credentials_to_json()
-
-# Function to load the credentials from the JSON file
-def load_credentials_from_json():
-    # Path to the settings file within the 'cfg' folder
-    try:
-        file_path = os.path.join('cfg', SETTINGS_FILE)
-        
-        
-        # Load the credentials from the JSON file
-        with open(file_path, 'r') as file:
-            data = json.load(file)
-            return data.get("credentials", {})  # Return the credentials, or an empty dictionary if not found
-    except FileNotFoundError:
-        return credentials  # Return the default credentials if the file is not found
-
-# Function to call when saving is needed (e.g., after modifying credentials)
-def update_credentials_and_save():
-    # Save the updated credentials to the file
-    save_credentials_to_json()    
 
 # Function to validate and format amount input
 def validate_amount_input(input_str):
@@ -109,7 +79,7 @@ def doThread(stop_event):
 # Main function to handle curses
 def main(stdscr):
     global selected_radio, selected_error_radio, button_selected
-    global selected_amount_detail,selected_features,selected_credential
+    global selected_terminal_status
 
     # Initialize colors
     curses.start_color()
@@ -135,7 +105,12 @@ def main(stdscr):
     features_fields = list(features.keys())
 
     # Load credentials from the JSON file
-    credentials = load_credentials_from_json()
+    #credentials = load_credentials_from_json()
+
+    params = ParameterSingleton.ParameterSingleton()
+
+    credentials["TID"] = params.get_tid()
+    credentials["Auth Key"] = params.get_auth_key()
 
     # Fields of the credentials
     credentials_fields = list(credentials.keys())
@@ -151,6 +126,24 @@ def main(stdscr):
     
     thread.start()
 
+
+    # Set defualt terminal status
+    TransactionData().terminalStatus = TerminalStatus.IDLE.name
+    # Set  Tip amount
+    TransactionData().tid = ParameterSingleton.ParameterSingleton().get_tid()
+    TransactionData().authKey = ParameterSingleton.ParameterSingleton().get_auth_key()
+    TransactionData().tipAmount = amount_details["Tip"]
+    TransactionData().cashbackAmount = amount_details["Cashback"]
+    TransactionData().surchargeAmount = amount_details["Surcharge"]
+    TransactionData().feeAmount = amount_details["Fee"]
+    TransactionData().enableSignature = features["Send Signature"]
+    TransactionData().currencyCode = features["Currency Code"]
+    TransactionData().splitPayment = features["Split Payment"]
+    TransactionData().splitAmount = features["Split Amount"]
+    TransactionData().isRunning = True
+    TransactionData().status = TransactionStatus.NoneStatus.name
+
+  
 
     while True:
         stdscr.clear()
@@ -171,6 +164,14 @@ def main(stdscr):
                 marker = "( )"
             stdscr.addstr(4 + idx, 12, f"{marker} {option}")
             stdscr.attroff(curses.color_pair(1 if idx == selected_radio else 2))
+        
+        # Set isRunning of TransactionData
+
+        if selected_radio == 0:
+            TransactionData().isRunning = True
+        else:
+            TransactionData().isRunning = False
+        
 
         # Display error radio options
         stdscr.addstr(7, 10, "Errors/Declines:")
@@ -183,6 +184,18 @@ def main(stdscr):
                 marker = "( )"
             stdscr.addstr(8 + idx, 12, f"{marker} {option}")
             stdscr.attroff(curses.color_pair(1 if idx == selected_error_radio else 2))
+
+        # Set status of TransactionData 
+
+        if selected_error_radio == 0:
+            TransactionData().status = TransactionStatus.Decline.name
+        elif selected_error_radio == 1:
+            TransactionData().status = TransactionStatus.Cancellation.name
+        elif selected_error_radio == 2:
+            TransactionData().status = TransactionStatus.NoResponse.name
+        elif selected_error_radio == 3:
+            TransactionData().status = TransactionStatus.NoneStatus.name
+        
         
 
         # Display input fields
@@ -230,12 +243,34 @@ def main(stdscr):
                 stdscr.attron(curses.color_pair(2))
 
             stdscr.addstr(26 + idx, 12, f"{field}: {credentials[field]}")
+        
+        # Display terminal status
+        stdscr.addstr(29, 10, "Terminal Status:")
+        for idx, option in enumerate(terminal_status):
+            if idx == selected_terminal_status:
+                stdscr.attron(curses.color_pair(1))  # Highlight selected radio
+                marker = "(X)"
+                # Update the terminal status
+                
+            else:
+                stdscr.attron(curses.color_pair(2))  # Normal color
+                marker = "( )"
+            stdscr.addstr(30 + idx, 12, f"{marker} {option}")
+            stdscr.attroff(curses.color_pair(1 if idx == selected_terminal_status else 2))
+
+            # Update the terminal status
+            if selected_terminal_status == 0:
+                TransactionData().terminalStatus = TerminalStatus.IDLE.name
+            else:
+                TransactionData().terminalStatus = TerminalStatus.BUSY.name
+
 
         stdscr.refresh()
 
         # Handle input events
         key = stdscr.getch()
         if key == ord('q'):  # Quit program
+            stop_event.set()
             break
 
         elif key == curses.KEY_MOUSE:
@@ -251,6 +286,12 @@ def main(stdscr):
                 current_features = y - 20    
             elif 26 <= y < 26 + len(credentials):
                 current_credential = y - 26
+            elif 30 <= y < 30 + len(terminal_status):
+                selected_terminal_status = y - 30
+
+            transaction = TransactionData()
+            log.debug(transaction.__str__())
+
         elif key == 10:  # Enter key
             curses.echo()  # Enable echoing of input
 
@@ -262,6 +303,15 @@ def main(stdscr):
                 formatted_value = validate_amount_input(new_value)
                 if formatted_value is not None:
                     amount_details[fields[current_field]] = formatted_value
+
+                    if fields[current_field] == "Tip":
+                        TransactionData().tipAmount = formatted_value
+                    elif fields[current_field] == "Cashback":
+                        TransactionData().cashbackAmount = formatted_value
+                    elif fields[current_field] == "Surcharge":
+                        TransactionData().surchargeAmount = formatted_value
+                    elif fields[current_field] == "Fee":
+                        TransactionData().feeAmount = formatted_value
                 else:
                     # Display error message for invalid input
                     stdscr.attron(curses.color_pair(3))
@@ -274,6 +324,12 @@ def main(stdscr):
                 if features_fields[current_features] in ["Send Signature", "Split Payment"]:
                     # Toggle checkbox for Send Signature or Split Payment
                     features[features_fields[current_features]] = not features[features_fields[current_features]]
+
+                    if features_fields[current_features] == "Send Signature":
+                        TransactionData().enableSignature = features[features_fields[current_features]]
+                    elif features_fields[current_features] == "Split Payment":
+                        TransactionData().splitPayment = features[features_fields[current_features]]
+
                 elif features_fields[current_features] == "Currency Code":
                     curses.echo()  # Enable echoing of input
                     stdscr.addstr(20 + current_features, 30, " " * 10)  # Clear previous input
@@ -282,6 +338,7 @@ def main(stdscr):
                     valid_value = validate_currency_code(new_value)
                     if valid_value:
                         features[features_fields[current_features]] = valid_value
+                        TransactionData().currencyCode = valid_value
                     else:
                         # Display error message for invalid input
                         stdscr.attron(curses.color_pair(3))
@@ -297,6 +354,7 @@ def main(stdscr):
                     formatted_value = validate_amount_input(new_value)
                     if formatted_value is not None:
                         features[features_fields[current_features]] = formatted_value
+                        TransactionData().splitAmount = formatted_value
                     else:
                         # Display error message for invalid input
                         stdscr.attron(curses.color_pair(3))
@@ -315,12 +373,17 @@ def main(stdscr):
                 new_value = stdscr.getstr(26 + current_credential, 30, 36).decode('utf-8')
                 credentials[credentials_fields[current_credential]] = new_value
 
-                update_credentials_and_save()  # Save after modifying credentials
+                # Save after modifying credentials
+
+                if credentials_fields[current_credential] == "TID":
+                    params.set_tid(new_value)
+                elif credentials_fields[current_credential] == "Auth Key":
+                    params.set_auth_key(new_value)
+                
                 curses.noecho()
 
-            if button_selected:
-                # Logic for when the start button is selected
-                break
+        
+          
 
 
 # Run the curses application

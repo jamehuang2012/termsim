@@ -3,6 +3,8 @@ from uuid import UUID
 from datetime import datetime
 import dateutil.parser
 
+from Header import Header, Party
+
 T = TypeVar("T")
 
 
@@ -19,52 +21,6 @@ def to_class(c: Type[T], x: Any) -> dict:
     assert isinstance(x, c)
     return cast(Any, x).to_dict()
 
-
-class InitiatingParty:
-    def __init__(self, identification: str, authentication_key: UUID, type: str) -> None:
-        self.identification = identification
-        self.authentication_key = authentication_key
-        self.type = type
-
-    def to_dict(self) -> dict:
-        return {
-            "identification": self.identification,
-            "authenticationKey": str(self.authentication_key),
-            "type": self.type,
-        }
-
-
-class Header:
-    def __init__(
-        self,
-        message_function: str,
-        protocol_version: str,
-        exchange_identification: UUID,
-        creation_date_time: Any,  # Allow both datetime and str
-        initiating_party: InitiatingParty,
-    ) -> None:
-        self.message_function = message_function
-        self.protocol_version = protocol_version
-        self.exchange_identification = exchange_identification
-        
-        # Parse string to datetime if necessary
-        if isinstance(creation_date_time, str):
-            self.creation_date_time = dateutil.parser.parse(creation_date_time)
-        elif isinstance(creation_date_time, datetime):
-            self.creation_date_time = creation_date_time
-        else:
-            raise TypeError("creation_date_time must be a datetime or a string")
-
-        self.initiating_party = initiating_party
-
-    def to_dict(self) -> dict:
-        return {
-            "messageFunction": self.message_function,
-            "protocolVersion": self.protocol_version,
-            "exchangeIdentification": str(self.exchange_identification),
-            "creationDateTime": self.creation_date_time.isoformat(),
-            "initiatingParty": self.initiating_party.to_dict(),
-        }
 
 
 class POIGroupIdentification:
@@ -106,20 +62,30 @@ class OCsessionManagementRequest:
             "sessionManagementRequest": self.session_management_request.to_dict(),
         }
 
-
-
 class SessionResponse:
     response: str
 
     def __init__(self, response: str) -> None:
         self.response = response
 
+class TransactionInProcess:
+    transaction_status: str
+    cancel_status: str
+    exchange_identification: UUID
+
+    def __init__(self, transaction_status: str, cancel_status: str, exchange_identification: UUID) -> None:
+        self.transaction_status = transaction_status
+        self.cancel_status = cancel_status
+        self.exchange_identification = exchange_identification
+
 
 class SessionManagementResponse:
     session_response: SessionResponse
+    transaction_in_process: TransactionInProcess
 
-    def __init__(self, session_response: SessionResponse) -> None:
+    def __init__(self, session_response: SessionResponse, transaction_in_process: TransactionInProcess) -> None:
         self.session_response = session_response
+        self.transaction_in_process = transaction_in_process
 
 
 class OCsessionManagementResponse:
@@ -132,7 +98,6 @@ class OCsessionManagementResponse:
 
 
 
-
 class Request:
     def __init__(self, o_csession_management_request: OCsessionManagementRequest) -> None:
         self.o_csession_management_request = o_csession_management_request
@@ -141,3 +106,47 @@ class Request:
         return {
             "OCsessionManagementRequest": self.o_csession_management_request.to_dict(),
         }
+
+
+# Updated function to parse OCsessionManagementResponse with optional transactionInProcess
+def parse_ocsession_management_response(data: dict) -> OCsessionManagementResponse:
+    # Parse Header
+    header_data = data["header"]
+    header = Header(
+        message_function=header_data["messageFunction"],
+        protocol_version=header_data["protocolVersion"],
+        exchange_identification=UUID(header_data["exchangeIdentification"]),
+        creation_date_time=header_data["creationDateTime"],
+        initiating_party=Party(
+            identification=header_data["initiatingParty"]["identification"],
+            authentication_key=UUID(header_data["initiatingParty"]["authenticationKey"]),
+            type=header_data["initiatingParty"]["type"]
+        )
+    )
+    
+    # Parse SessionResponse
+    session_response_data = data["sessionManagementResponse"]["sessionResponse"]
+    session_response = SessionResponse(response=session_response_data["response"])
+
+    # Check if transactionInProcess exists
+    transaction_data = data["sessionManagementResponse"].get("transactionInProcess")
+    transaction_in_process = None
+    if transaction_data:
+        transaction_in_process = TransactionInProcess(
+            transaction_status=transaction_data.get("transactionStatus", "N/A"),
+
+            cancel_status=transaction_data.get("cancelStatus", "N/A"),
+            exchange_identification=UUID(transaction_data["exchangeIdentification"])
+        )
+
+    # Create SessionManagementResponse instance
+    session_management_response = SessionManagementResponse(
+        session_response=session_response,
+        transaction_in_process=transaction_in_process  # Allow None
+    )
+
+    # Return final OCsessionManagementResponse
+    return OCsessionManagementResponse(
+        header=header,
+        session_management_response=session_management_response
+    )

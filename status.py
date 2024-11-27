@@ -18,6 +18,10 @@ def load_json_data():
         # Open FIFO in non-blocking mode
         with open(FIFO_PATH, "r", os.O_NONBLOCK) as fifo:
             message = fifo.read().strip()
+
+            # close the file
+            fifo.close()
+
             if not message:
                 return None  # No new data; return None to keep the current table
             return json.loads(message)  # Deserialize the JSON data
@@ -26,14 +30,14 @@ def load_json_data():
             "TerminalStatus": "INVALID",
             "TransactionStatus": "UNKNOWN",
             "Response": "ERROR",
-            "IsCancelled": False
+            "CancelStatus": "N/A"
         }
     except Exception as e:
         return {
             "TerminalStatus": "ERROR",
             "TransactionStatus": str(e),
             "Response": "NONE",
-            "IsCancelled": False
+            "CancelStatus": "N/A"
         }
 
 # Function to create the table
@@ -55,6 +59,7 @@ def create_table(data):
     trans_colors = {
         "INIT": "white",
         "ACPT": "cyan",
+        "RSPN": "yellow",
         "CMPT": "green"
     }
 
@@ -64,8 +69,8 @@ def create_table(data):
     }
 
     cancel_colors = {
-        True: "red",
-        False: "cyan"
+        "N/A": "cyan",
+        "PEND": "red"
     }
 
     # Terminal Status
@@ -84,9 +89,10 @@ def create_table(data):
     table.add_row("Response", f"[{response_color}]{response}[/{response_color}]")
 
     # Cancel Status
-    is_cancelled = data.get("IsCancelled", False)
-    cancel_color = cancel_colors[is_cancelled]
-    table.add_row("Cancel Status", f"[{cancel_color}]{'CANCELLED' if is_cancelled else 'ACTIVE'}[/{cancel_color}]")
+    cancel_status = data.get("CancelStatus", "N/A")
+    cancel_color = cancel_colors[cancel_status]
+    table.add_row("Cancel Status", f"[{cancel_color}]{'PEND' if cancel_status == 'PEND' else 'N/A'}[/{cancel_color}]")
+
 
     return table
 
