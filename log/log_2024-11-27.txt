@@ -32208,3 +32208,630 @@
 2024-11-27 16:04:54,834 - LoggerManager - DEBUG - Thread Running
 2024-11-27 16:04:54,835 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
 2024-11-27 16:04:54,835 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:18,431 - LoggerManager - DEBUG - Start Thread
+2024-11-27 16:09:18,435 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:18,436 - LoggerManager - DEBUG - Transaction stopped running
+2024-11-27 16:09:23,443 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:23,444 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:23,444 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:23,851 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:23,852 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:23,852 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "b246608f-419a-44c4-b2c5-466eb6c6154b", "creationDateTime": "2024-11-27T22:09:23.851662+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:23,852 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:23,961 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:28,969 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:28,970 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:28,970 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:29,291 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:29,294 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:29,295 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "55825ee4-1a86-4283-bebc-1886338e1c3c", "creationDateTime": "2024-11-27T22:09:29.291003+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:29,295 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:29,405 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:34,414 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:34,415 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:34,415 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:34,746 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:34,746 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:34,747 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "832e6d87-de1f-42a5-8cad-50cc1f1b1f5f", "creationDateTime": "2024-11-27T22:09:34.746661+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:34,747 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:34,862 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:39,864 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:39,864 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:39,864 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:40,199 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:40,199 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:40,200 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4174b9af-766b-4a99-8ea7-756a223adae1", "creationDateTime": "2024-11-27T22:09:40.199549+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:40,200 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:40,310 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:45,315 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:45,316 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:45,316 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:45,628 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:45,628 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:45,628 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "0c395027-7405-4429-bcf6-a997275e3022", "creationDateTime": "2024-11-27T22:09:45.628038+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:45,628 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:45,737 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:50,743 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:50,743 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:50,743 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:51,078 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:51,078 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:51,078 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "a3e943d2-739d-48dd-9ca5-2f151fa3fa5e", "creationDateTime": "2024-11-27T22:09:51.078242+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:51,079 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:51,194 - LoggerManager - DEBUG - No data received
+2024-11-27 16:09:56,199 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:09:56,200 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:09:56,200 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:09:56,511 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:09:56,511 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:09:56,512 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "95b5324b-095b-4192-b3ce-c2d5f1fc7fd1", "creationDateTime": "2024-11-27T22:09:56.511455+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:09:56,512 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:09:56,620 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:01,625 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:01,626 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:01,626 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:01,948 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:01,948 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:01,949 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "3879bea3-acf0-479a-8251-dbdc25797f96", "creationDateTime": "2024-11-27T22:10:01.948205+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:01,955 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:02,068 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:07,070 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:07,071 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:07,071 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:07,459 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:07,459 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:07,460 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "177ee502-6dce-4908-9469-d291faac2ae4", "creationDateTime": "2024-11-27T22:10:07.459534+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:07,460 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:07,571 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:12,577 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:12,577 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:12,577 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:12,891 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:12,891 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:12,891 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "2b3ef953-08ce-402a-b3f6-f8d50b168c89", "creationDateTime": "2024-11-27T22:10:12.890953+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:12,891 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:13,000 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:18,004 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:18,005 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:18,005 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:18,317 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:18,317 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:18,318 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4018c4ea-1262-456f-9a2e-e928e2540933", "creationDateTime": "2024-11-27T22:10:18.317566+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:18,318 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:18,427 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:23,433 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:23,433 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:23,434 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:23,767 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:23,767 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:23,767 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4153dfbf-69ab-40e4-9f05-1f4479e6500c", "creationDateTime": "2024-11-27T22:10:23.767039+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:23,767 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:23,886 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:28,891 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:28,892 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:28,892 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:29,224 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:29,225 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:29,225 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "e966f541-2346-44d9-b5b3-5d244d473aa0", "creationDateTime": "2024-11-27T22:10:29.224750+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:29,225 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:29,341 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:34,348 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:34,348 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:34,348 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:34,663 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:34,663 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:34,664 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "03cc753b-3b62-46ab-a8fa-1adceb01da65", "creationDateTime": "2024-11-27T22:10:34.663645+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:34,664 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:34,773 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:39,780 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:39,780 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:39,780 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:40,112 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:40,112 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:40,113 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9b01e342-84a1-45b9-804d-0a863a37236f", "creationDateTime": "2024-11-27T22:10:40.112428+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:40,113 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:40,229 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:45,236 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:45,236 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:45,236 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:45,534 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:45,535 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:45,537 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "b8454079-6b88-4aed-825d-695ec03c1703", "creationDateTime": "2024-11-27T22:10:45.534682+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:45,537 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:45,642 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:50,648 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:50,648 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:50,648 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:50,980 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:50,980 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:50,981 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "273cb1e9-5efc-4a9e-a867-ffd8b7cdbe42", "creationDateTime": "2024-11-27T22:10:50.980638+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:50,981 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:51,098 - LoggerManager - DEBUG - No data received
+2024-11-27 16:10:56,104 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:10:56,104 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:10:56,104 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:10:56,424 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:10:56,424 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:10:56,424 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "cb20cfba-62b5-41be-bcea-aae8f6cfbc39", "creationDateTime": "2024-11-27T22:10:56.424176+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:10:56,424 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:10:56,536 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:01,543 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:01,543 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:01,544 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:01,865 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:01,865 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:01,865 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9bc1a856-54a6-4de0-ba59-ed30fdba3e8b", "creationDateTime": "2024-11-27T22:11:01.864917+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:01,865 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:01,975 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:06,981 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:06,982 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:06,982 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:07,295 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:07,296 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:07,296 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "2a8223e6-4cdb-4df9-baae-3a219b675658", "creationDateTime": "2024-11-27T22:11:07.295732+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:07,297 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:07,405 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:12,411 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:12,412 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:12,412 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:12,731 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:12,731 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:12,731 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "545bcdea-6264-4b01-86d3-1eec3176dc36", "creationDateTime": "2024-11-27T22:11:12.730961+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:12,731 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:12,843 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:17,848 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:17,849 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:17,849 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:18,163 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:18,163 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:18,164 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "69f136ed-287e-444c-bf81-38d608fa8de7", "creationDateTime": "2024-11-27T22:11:18.162989+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:18,164 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:18,274 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:23,279 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:23,280 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:23,280 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:23,613 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:23,613 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:23,614 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "665a2556-680e-4579-81c9-e073ee9d1c46", "creationDateTime": "2024-11-27T22:11:23.613323+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:23,614 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:23,750 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:28,756 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:28,756 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:28,756 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:29,068 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:29,068 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:29,068 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "3610f11b-b4bd-4bc4-829c-0ae7178bc980", "creationDateTime": "2024-11-27T22:11:29.067924+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:29,068 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:29,177 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:34,183 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:34,184 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:34,184 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:34,519 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:34,519 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:34,519 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "bb21c4f8-6102-44e6-b9dc-34eef8fb9fdc", "creationDateTime": "2024-11-27T22:11:34.519101+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:34,520 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:34,635 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:39,637 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:39,639 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:39,642 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:39,952 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:39,952 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:39,953 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "77d57717-92eb-4f68-835d-929adf7263b3", "creationDateTime": "2024-11-27T22:11:39.952475+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:39,953 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:40,064 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:45,070 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:45,070 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:45,070 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:45,382 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:45,382 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:45,383 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "47d45bd3-5783-4143-a61c-29a30d7b47a6", "creationDateTime": "2024-11-27T22:11:45.382374+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:45,383 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:45,491 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:50,496 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:50,497 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:50,497 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:50,830 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:50,830 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:50,831 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "5b205a9a-67d7-41d3-abff-3603fa4aa5d5", "creationDateTime": "2024-11-27T22:11:50.830179+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:50,831 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:50,946 - LoggerManager - DEBUG - No data received
+2024-11-27 16:11:55,951 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:11:55,952 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:11:55,952 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:11:56,251 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:11:56,251 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:11:56,251 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "29eb377f-4022-48cd-ace7-64aca6c1cafc", "creationDateTime": "2024-11-27T22:11:56.250894+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:11:56,251 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:11:56,356 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:01,361 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:01,362 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:01,362 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:01,679 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:01,679 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:01,680 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "e6547142-a9cd-437d-aa3c-40aa851b66db", "creationDateTime": "2024-11-27T22:12:01.679415+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:01,681 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:01,791 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:06,805 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:06,807 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:06,807 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:07,129 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:07,129 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:07,129 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "977bce8c-65e3-4c35-a747-5e101887f449", "creationDateTime": "2024-11-27T22:12:07.129132+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:07,130 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:07,244 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:12,249 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:12,250 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:12,250 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:12,564 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:12,564 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:12,564 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "b2e01ece-804c-4028-94c7-df193836b1db", "creationDateTime": "2024-11-27T22:12:12.564026+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:12,565 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:12,673 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:17,680 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:17,680 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:17,680 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:17,992 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:17,993 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:17,993 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "897d3ede-1600-4c9e-9353-487a5298db9c", "creationDateTime": "2024-11-27T22:12:17.992782+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:17,993 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:18,102 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:23,104 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:23,104 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:23,105 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:23,426 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:23,426 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:23,427 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "f4f57dfd-a2be-4af9-b68a-9cd5df4faa79", "creationDateTime": "2024-11-27T22:12:23.426491+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:23,427 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:23,548 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:28,554 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:28,554 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:28,554 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:28,888 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:28,888 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:28,888 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "6a4df922-5b92-4f4e-8516-ad52ece22d23", "creationDateTime": "2024-11-27T22:12:28.887954+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:28,888 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:29,003 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:34,009 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:34,009 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:34,009 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:34,319 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:34,319 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:34,320 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "830a975e-d872-4392-90b3-e989f1c7431e", "creationDateTime": "2024-11-27T22:12:34.319447+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:34,320 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:34,428 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:39,433 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:39,434 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:39,434 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:39,767 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:39,767 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:39,767 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "94daff2b-e357-46a6-9a1f-657f0f1abec7", "creationDateTime": "2024-11-27T22:12:39.767070+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:39,767 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:39,882 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:44,888 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:44,888 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:44,889 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:45,202 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:45,202 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:45,202 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "1316f11a-e223-47d6-82ff-14c3c6b3ccae", "creationDateTime": "2024-11-27T22:12:45.202110+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:45,202 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:45,311 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:50,317 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:50,317 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:50,317 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:50,630 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:50,630 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:50,631 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "d67a13e0-6aa5-4ab1-96f6-e66b3c16d8fb", "creationDateTime": "2024-11-27T22:12:50.630299+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:50,631 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:50,739 - LoggerManager - DEBUG - No data received
+2024-11-27 16:12:55,742 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:12:55,743 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:12:55,743 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:12:56,078 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:12:56,080 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:12:56,082 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "67606e45-68ad-434c-8b47-f547e1e9b365", "creationDateTime": "2024-11-27T22:12:56.078065+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:12:56,082 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:12:56,198 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:01,204 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:01,204 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:01,204 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:01,536 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:01,536 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:01,537 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4f5ca4ac-0924-405c-8a88-803001bd490b", "creationDateTime": "2024-11-27T22:13:01.536525+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:01,537 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:01,652 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:06,658 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:06,658 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:06,659 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:06,973 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:06,973 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:06,973 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9e924346-5766-4d92-b007-45b7e5f25530", "creationDateTime": "2024-11-27T22:13:06.972998+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:06,973 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:07,083 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:12,090 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:12,090 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:12,090 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:12,390 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:12,390 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:12,391 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "f6ba4eda-2d14-4e50-bcc0-5982aff34380", "creationDateTime": "2024-11-27T22:13:12.390679+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:12,391 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:12,496 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:17,502 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:17,502 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:17,502 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:17,843 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:17,843 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:17,844 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "89c7f379-cb25-42b2-bd05-4f4050a884f3", "creationDateTime": "2024-11-27T22:13:17.843497+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:17,844 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:17,960 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:22,966 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:22,967 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:22,968 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:23,292 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:23,292 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:23,292 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9949310a-0c57-419b-a56d-242c54eb9230", "creationDateTime": "2024-11-27T22:13:23.292094+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:23,293 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:23,405 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:28,411 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:28,411 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:28,411 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:28,711 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:28,711 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:28,712 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "6b71905f-818c-4088-9bbf-dc3594fcbabd", "creationDateTime": "2024-11-27T22:13:28.710873+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:28,712 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:28,846 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:33,852 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:33,853 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:33,853 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:34,166 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:34,166 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:34,167 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "48e4c0cb-27b2-4e46-ab4c-4c4cb366c132", "creationDateTime": "2024-11-27T22:13:34.166517+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:34,167 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:34,275 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:39,281 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:39,281 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:39,281 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:39,599 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:39,599 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:39,600 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "712878d2-4350-4736-95c2-d88ff7041073", "creationDateTime": "2024-11-27T22:13:39.599600+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:39,600 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:39,711 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:44,718 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:44,719 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:44,719 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:45,046 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:45,047 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:45,048 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "2195510a-b984-4856-892e-7d03ae12b041", "creationDateTime": "2024-11-27T22:13:45.046645+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:45,048 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:45,156 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:50,162 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:50,162 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:50,163 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:50,473 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:50,473 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:50,474 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "93fb20d1-7c4f-4a83-849a-5abb0a0d8450", "creationDateTime": "2024-11-27T22:13:50.473347+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:50,474 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:50,581 - LoggerManager - DEBUG - No data received
+2024-11-27 16:13:55,584 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:13:55,584 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:13:55,585 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:13:55,885 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:13:55,885 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:13:55,886 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "743e487b-db4c-41e7-9496-d2445cf64c45", "creationDateTime": "2024-11-27T22:13:55.885280+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:13:55,886 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:13:55,991 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:00,996 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:00,997 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:01,000 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:01,333 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:01,334 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:01,334 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "dadbf137-4db3-47cd-aca8-97fa811cf4ae", "creationDateTime": "2024-11-27T22:14:01.333708+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:01,334 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:01,451 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:06,457 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:06,457 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:06,457 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:06,794 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:06,794 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:06,794 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "73d6fc95-1a3d-429e-807b-19d9c28b5c62", "creationDateTime": "2024-11-27T22:14:06.793886+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:06,794 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:06,910 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:11,916 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:11,916 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:11,917 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:12,229 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:12,230 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:12,230 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "13e56b1b-69c7-41da-8b73-55f9103e5fb3", "creationDateTime": "2024-11-27T22:14:12.229788+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:12,230 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:12,340 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:17,344 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:17,344 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:17,344 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:17,655 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:17,655 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:17,656 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "51332f91-7098-4e1a-ad6e-e86154974d3f", "creationDateTime": "2024-11-27T22:14:17.655646+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:17,656 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:17,764 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:22,769 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:22,770 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:22,770 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:23,464 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:23,464 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:23,465 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "cf617f82-51ce-4158-b0b2-aa7ab81d9410", "creationDateTime": "2024-11-27T22:14:23.464623+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:23,465 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:23,580 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:28,585 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:28,586 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:28,586 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:28,903 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:28,903 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:28,903 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "aa5feffb-5e41-4992-b391-3230c71cbae4", "creationDateTime": "2024-11-27T22:14:28.903173+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:28,903 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:29,014 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:34,019 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:34,019 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:34,020 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:34,318 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:34,318 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:34,319 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "3c3347d1-91d7-4f96-97ad-34b83dd26edd", "creationDateTime": "2024-11-27T22:14:34.318707+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:34,319 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:34,423 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:39,429 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:39,429 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:39,429 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:39,727 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:39,728 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:39,728 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "afab5378-dd3e-424c-b763-9bd036aa09f9", "creationDateTime": "2024-11-27T22:14:39.727810+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:39,728 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:39,832 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:44,838 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:44,838 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:44,839 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:45,169 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:45,169 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:45,170 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "cb4d4819-770c-4ef2-a972-93efd0755c06", "creationDateTime": "2024-11-27T22:14:45.169651+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:45,170 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:45,285 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:50,288 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:50,288 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:50,288 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:50,620 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:50,620 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:50,621 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "548ff02f-4663-4900-a61b-a50a19e27f2b", "creationDateTime": "2024-11-27T22:14:50.620570+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:50,621 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:50,736 - LoggerManager - DEBUG - No data received
+2024-11-27 16:14:55,742 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:14:55,742 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:14:55,742 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:14:56,042 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:14:56,042 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:14:56,043 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9599f2bd-f530-4428-940a-605e238d828b", "creationDateTime": "2024-11-27T22:14:56.042325+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:14:56,043 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:14:56,148 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:01,153 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:01,154 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:01,155 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:01,455 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:01,456 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:01,456 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "a9a24bff-f72b-4ef9-a739-cea2dd92efb8", "creationDateTime": "2024-11-27T22:15:01.455752+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:01,456 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:01,560 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:06,565 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:06,566 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:06,566 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:06,887 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:06,887 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:06,888 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "843f68cf-efc7-4f4c-a506-883d89e7308e", "creationDateTime": "2024-11-27T22:15:06.887254+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:06,888 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:06,999 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:12,005 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:12,005 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:12,005 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:12,336 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:12,336 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:12,337 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "9d00e3ea-f688-481c-8fac-fab253b91600", "creationDateTime": "2024-11-27T22:15:12.336554+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:12,337 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:12,452 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:17,458 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:17,459 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:17,459 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:17,771 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:17,771 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:17,775 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "b78400dc-3794-4ff2-9e4c-48ef836c8a46", "creationDateTime": "2024-11-27T22:15:17.771647+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:17,775 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:17,883 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:22,889 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:22,889 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:22,890 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:23,220 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:23,221 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:23,221 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "7e51f6ab-176b-4a61-b208-f80444aac2b7", "creationDateTime": "2024-11-27T22:15:23.220710+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:23,221 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:23,335 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:28,341 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:28,341 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:28,341 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:28,644 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:28,646 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:28,647 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4f3f51d0-647b-4ada-8de9-1f3fa18839e8", "creationDateTime": "2024-11-27T22:15:28.644696+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:28,647 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:28,752 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:33,757 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:33,758 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:33,758 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:34,067 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:34,068 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:34,068 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "79a96028-61ad-47c3-beb9-dc6b1013396e", "creationDateTime": "2024-11-27T22:15:34.067707+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:34,068 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:34,177 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:39,186 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:39,187 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:39,187 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:39,510 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:39,511 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:39,512 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "0a528b1d-7674-4499-ae73-91fa0a4117ff", "creationDateTime": "2024-11-27T22:15:39.510114+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:39,512 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:39,623 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:44,625 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:44,626 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:44,626 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:44,947 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:44,947 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:44,948 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "adce77ed-e575-4178-9899-fc18e50bb91e", "creationDateTime": "2024-11-27T22:15:44.947616+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:44,948 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:45,062 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:50,068 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:50,068 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:50,068 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:50,383 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:50,383 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:50,383 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "0d629f8f-db8b-49e0-802d-0dfa8f3e5e27", "creationDateTime": "2024-11-27T22:15:50.382884+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:50,383 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:50,492 - LoggerManager - DEBUG - No data received
+2024-11-27 16:15:55,498 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:15:55,498 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:15:55,498 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:15:55,813 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:15:55,813 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:15:55,814 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "a5859f12-a2c4-4087-8138-1f8d6c9d2629", "creationDateTime": "2024-11-27T22:15:55.813461+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:15:55,814 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:15:55,922 - LoggerManager - DEBUG - No data received
+2024-11-27 16:16:00,928 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:16:00,929 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:16:00,929 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:16:01,253 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:16:01,253 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:16:01,253 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "880423cb-d915-4052-aa95-725b6ca6936a", "creationDateTime": "2024-11-27T22:16:01.253005+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:16:01,253 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:16:01,367 - LoggerManager - DEBUG - No data received
+2024-11-27 16:16:06,372 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:16:06,373 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:16:06,373 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:16:06,685 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:16:06,686 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:16:06,686 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "97b63a3f-1bc8-486f-b341-0cc5dca59e73", "creationDateTime": "2024-11-27T22:16:06.685768+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:16:06,686 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:16:06,795 - LoggerManager - DEBUG - No data received
+2024-11-27 16:16:11,800 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:16:11,801 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:16:11,801 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:16:12,118 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:16:12,118 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:16:12,118 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "74a79920-ec59-4d0a-b67b-c593d5c9a474", "creationDateTime": "2024-11-27T22:16:12.118282+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:16:12,119 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:16:12,229 - LoggerManager - DEBUG - No data received
+2024-11-27 16:16:17,231 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:16:17,232 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:16:17,232 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:16:17,562 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:16:17,562 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:16:17,563 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "2de87166-53b1-4e0b-966d-c71a6b1ddbca", "creationDateTime": "2024-11-27T22:16:17.562551+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:16:17,563 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:16:17,678 - LoggerManager - DEBUG - No data received
+2024-11-27 16:16:22,683 - LoggerManager - DEBUG - Thread Running
+2024-11-27 16:16:22,684 - LoggerManager - DEBUG - URL: terminal-poi-sandbox.nuvei.com
+2024-11-27 16:16:22,684 - LoggerManager - DEBUG - Port: 18080
+2024-11-27 16:16:22,982 - LoggerManager - DEBUG - ETransType.TT_SESSION_HEARTBEAT
+2024-11-27 16:16:22,982 - LoggerManager - DEBUG - Session Management Request
+2024-11-27 16:16:22,982 - LoggerManager - DEBUG - Packed Data: {"OCsessionManagementRequest": {"header": {"messageFunction": "SASQ", "protocolVersion": "3.0", "exchangeIdentification": "4112de87-785c-4832-ba79-22ebc03cabd9", "creationDateTime": "2024-11-27T22:16:22.982007+00:00", "initiatingParty": {"identification": "12300337", "authenticationKey": "TID", "type": "b68b525d-6c18-40fe-9e39-132fb5a687da"}}, "sessionManagementRequest": {"POIComponent": {"POIGroupIdentification": {"exchangeAction": "NOTI"}, "state": "IDLE"}}}}
+2024-11-27 16:16:22,982 - LoggerManager - DEBUG - length of packed data: 465
+2024-11-27 16:16:23,086 - LoggerManager - DEBUG - No data received

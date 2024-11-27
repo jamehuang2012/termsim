@@ -10,7 +10,6 @@ import LoggerManager
 from ParameterSingleton import ParameterSingleton
 from ServiceResponse import AuthorisationResult, DetailedAmount, OCserviceResponse, PackServiceResponse, PaymentResponse, Receipt, ReceiptDetails, Response, ResponseToAuthorisation, RetailerPaymentResult, ServiceResponse, TransactionDetails, TransactionIdentification, TransactionResponse
 import StringUtily
-import Transaction
 
 from TransactionData import TransactionData
 from receipt import ReceiptGenerator
@@ -58,7 +57,7 @@ def  createRequest():
     
         log.debug("Session Management Request")
 
-        initg_pty = sessionmgr.Party(tid,authkey,"TID")
+        initg_pty = Party(tid,authkey,"TID")
         #rcpt_pty = sessionmgr.InitiatingParty(pid,"","PID")
 
 
@@ -69,7 +68,7 @@ def  createRequest():
         #elif (v.transactionType == Constants.TransctionType.SESSIONMGR):
         #    msgFunction = "SASQ"
 
-        hdr = sessionmgr.Header(message_function,"3.0",random_uuid,utc_string,initg_pty)
+        hdr = Header(message_function,"3.0",random_uuid,utc_string,initg_pty)
 
         #print(json.dumps(hdr.to_dict()))
 
