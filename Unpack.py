@@ -81,18 +81,44 @@ def parseResponse(packed_data):
         oc_service_request = ParseServiceRequest(request_data)
 
         # fill the transaction data
-        TransactionData().message_function = oc_service_request.header.message_function
+        TransactionData().messageFunction = oc_service_request.header.message_function
         TransactionData().exchangeIdentification = oc_service_request.header.exchange_identification
-        TransactionData().service_attribute = oc_service_request.service_request.payment_request.service_attribute
-        TransactionData().amount_qualifier = oc_service_request.service_request.payment_request.transaction_details.amount_qualifier
-        TransactionData().validity_duration = oc_service_request.service_request.payment_request.transaction_details.validity_duration
-        TransactionData().total_amount = oc_service_request.service_request.payment_request.transaction_details.total_amount
-        TransactionData().moto_indicator = oc_service_request.service_request.payment_request.transaction_details.moto_indicator
-        TransactionData().total_amount = oc_service_request.service_request.payment_request.transaction_details.total_amount
-        TransactionData().invoice_number = oc_service_request.service_request.context.sale_context.invoice_number
+        TransactionData().serviceAttribute = oc_service_request.service_request.payment_request.service_attribute
+        TransactionData().amountQualifier = oc_service_request.service_request.payment_request.transaction_details.amount_qualifier
+        TransactionData().validityDuration = oc_service_request.service_request.payment_request.transaction_details.validity_duration
+        TransactionData().totalAmount = oc_service_request.service_request.payment_request.transaction_details.total_amount
+        TransactionData().motoIndicator = oc_service_request.service_request.payment_request.transaction_details.moto_indicator
+        
+        if oc_service_request.service_request.context.sale_context.invoice_number:
+            TransactionData().invoiceNumber = oc_service_request.service_request.context.sale_context.invoice_number
+        else:
+            TransactionData().invoiceNumber = ""
+
+        # Clerk id 
+        if oc_service_request.service_request.context.sale_context.cashier_identification:
+            TransactionData().clerkId = oc_service_request.service_request.context.sale_context.cashier_identification
+        else:
+            TransactionData().clerkId = ""
  
         
-        TransactionData().transactionType = StringUtily.get_transaction_type(TransactionData().message_function)
+        TransactionData().transactionType = StringUtily.get_transaction_type(TransactionData().messageFunction)
+        TransactionData().identification = oc_service_request.header.initiating_party.identification
+        TransactionData().type = oc_service_request.header.initiating_party.type
+
+        if TransactionData().transactionType in [StringUtily.ETransType.TT_VOID]:
+            TransactionData().localReferenceNumber = oc_service_request.service_request.reversal_request.transaction_identification
+
+
+        status_data = {
+            "TerminalStatus": TransactionData().get_terminal_status_string(),
+            "TransactionStatus": "ACPT",
+            "Response": "N/A",
+            "CancelStatus": CancelStatus
+        }
+
+        sender = FIFOStatusSender()
+        sender.send_status(status_data)
+
 
     elif "OCreportRequest" in request_data:
         log.debug("OCreportRequest: %s", request_data["OCreportRequest"])

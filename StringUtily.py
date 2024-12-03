@@ -48,6 +48,26 @@ class ETransType(Enum):
     TT_TOKEN_COMPLETION = 28
     TT_TOKEN_PAYOUT = 29
     TT_GIFT_END = 30
+
+'''enum ENTRYMODE
+{
+	EM_NONE,
+	EM_SWIPED,
+	EM_MANUAL,
+	EM_RFID,
+	EM_VIVO,
+	EM_SMC,
+	EM_END
+};
+'''
+class EntryMode(Enum):
+    EM_NONE = 1
+    EM_SWIPED = 2
+    EM_MANUAL = 3
+    EM_RFID = 4
+    EM_VIVO = 5
+    EM_SMC = 6
+    EM_END = 7
     
 def get_message_function(trans_type):
 
@@ -140,19 +160,19 @@ def get_transaction_type(message_code):
     return message_to_trans_type.get(message_code, None)
 
 
-def generate_AuthCode():
+def generate_auth_code():
     # format A + 5 digit random number
     return 'A' + str(random.randint(10000, 99999))
 
-def generate_RecordNumber():
+def generate_record_number():
     # format 7 digit random number
     return str(random.randint(1000000, 9999999))
 
-def generate_HostInvoiceNumber():
+def generate_host_invoicenum():
     # format 7 digit random number
     return str(random.randint(1000000, 9999999))
 
-def generate_HTS():
+def generate_hts():
     # format 7 digit random number
     return str(random.randint(1000000, 9999999))
     

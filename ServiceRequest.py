@@ -73,19 +73,36 @@ class PaymentRequest:
         self.transaction_identification = transaction_identification
         self.transaction_details = transaction_details
 
+class ReversalRequest:
+    transaction_type: str
+    transaction_identification: str
+
+    def __init__(self, transaction_type: str, transaction_identification: str) -> None:
+        self.transaction_type = transaction_type
+        self.transaction_identification = transaction_identification
+
+class BatchRequest:
+    remove_all_flag: int
+
+    def __init__(self, remove_all_flag: int) -> None:
+        self.remove_all_flag = remove_all_flag
+
 
 class ServiceRequest:
     environment: Environment
     context: Context
     service_content: str
     payment_request: PaymentRequest
+    reversal_request: ReversalRequest
+    batch_request: BatchRequest
 
-    def __init__(self, environment: Environment, context: Context, service_content: str, payment_request: PaymentRequest) -> None:
+    def __init__(self, environment: Environment, context: Context, service_content: str, payment_request: PaymentRequest,reversal_request: ReversalRequest,batch_request: BatchRequest) -> None:
         self.environment = environment
         self.context = context
         self.service_content = service_content
         self.payment_request = payment_request
-
+        self.reversal_request = reversal_request
+        self.batch_request = batch_request
 
 class OCserviceRequest:
     header: Header
@@ -121,6 +138,26 @@ def ParseServiceRequest(json_data: dict) -> OCserviceRequest:
         creation_date_time=header_data['creationDateTime'],
         exchange_identification=UUID(header_data['exchangeIdentification'])
     )
+    # Extract the reversal request data safely
+    reversal_request_data = service_request_data.get('reversalRequest')
+
+    # Initialize the ReversalRequest object only if data is present
+    reversal_request = None
+    if reversal_request_data:
+        reversal_request = ReversalRequest(
+            transaction_type=reversal_request_data.get('transactionType', ''),
+            transaction_identification=reversal_request_data.get('transactionIdentification', '')
+        )
+
+    # Batch Request
+
+    batch_request_data = service_request_data.get('batchRequest')
+
+    batch_request = None
+    if batch_request_data:
+        batch_request = BatchRequest(
+            remove_all_flag=batch_request_data.get('removeAllFlag', 0)
+        )
 
     # Parsing the ServiceRequest
     service_request = ServiceRequest(
@@ -131,7 +168,7 @@ def ParseServiceRequest(json_data: dict) -> OCserviceRequest:
         context=Context(
             sale_context=SaleContext(
                 cashier_identification=service_request_data['context']['saleContext'].get('cashierIdentification', ''),
-                invoice_number=int(service_request_data['context']['saleContext'].get('invoiceNumber', 0)),
+                invoice_number=service_request_data['context']['saleContext'].get('invoiceNumber', ""),
                 identification_type=service_request_data['context']['saleContext'].get('identificationType', '')
             )
         ),
@@ -144,13 +181,19 @@ def ParseServiceRequest(json_data: dict) -> OCserviceRequest:
                 total_amount=service_request_data['paymentRequest']['transactionDetails']['totalAmount'],
                 validity_duration=service_request_data['paymentRequest']['transactionDetails'].get('validityDuration', 0),
                 amount_qualifier=service_request_data['paymentRequest']['transactionDetails'].get('amountQualifier', ''),
-                moto_indicator=service_request_data['paymentRequest']['transactionDetails']['MOTOIndicator'],
+                #moto_indicator=service_request_data['paymentRequest']['transactionDetails']['MOTOIndicator'],
+                moto_indicator=service_request_data['paymentRequest']['transactionDetails'].get('MOTOIndicator', False),  # Use get() here to avoid KeyError
+                
+                
+                # Check if 'detailedAmount' exists and access safely
                 detailed_amount=DetailedAmount(
-                    gratuity=service_request_data['paymentRequest']['transactionDetails']['detailedAmount']['gratuity'],
-                    amount_goods_and_services=service_request_data['paymentRequest']['transactionDetails']['detailedAmount']['amountGoodsAndServices']
+                    gratuity=service_request_data['paymentRequest']['transactionDetails'].get('detailedAmount', {}).get('gratuity', '0.00'),
+                    amount_goods_and_services=service_request_data['paymentRequest']['transactionDetails'].get('detailedAmount', {}).get('amountGoodsAndServices', '0.00')
                 )
             )
-        )
+        ),
+        reversal_request=reversal_request,  # This can be None or an object
+        batch_request=batch_request  # This can be None or an object
     )
 
     return OCserviceRequest(header, service_request)

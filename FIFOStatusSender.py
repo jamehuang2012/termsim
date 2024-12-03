@@ -1,6 +1,10 @@
 import os
 import json
 import LoggerManager
+
+# Enabled Status flag to enable status
+ENABLE_STATUS = True
+
 class FIFOStatusSender:
     def __init__(self, fifo_path: str = "/tmp/status_fifo"):
         self.fifo_path = fifo_path
@@ -9,6 +13,10 @@ class FIFOStatusSender:
             os.mkfifo(self.fifo_path)
 
     def send_status(self, status_data: dict):
+
+        if not ENABLE_STATUS:
+            return
+
         """Send a status dictionary to the FIFO."""
         try:
             with open(self.fifo_path, 'w') as fifo:

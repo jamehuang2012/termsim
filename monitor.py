@@ -3,6 +3,10 @@ import time
 import logging
 import json
 
+# Enalbed Monitoring flag to enable monitoring
+ENABLE_MONITORING = True
+
+
 class Monitor:
     def __init__(self, payload, title, max_retries=5, retry_delay=0.5):
         self.queue_name = "/log_queue"
@@ -24,22 +28,25 @@ class Monitor:
         for attempt in range(self.max_retries):
             try:
                 mq.send(log_entry, timeout=1)  # Send with a 1-second timeout
-                self.logger.info(f"Message sent successfully: {log_entry}")
+                #self.logger.info(f"Message sent successfully: {log_entry}")
                 break  # Exit retry loop if successful
             except posix_ipc.BusyError:
-                self.logger.warning(f"Queue full. Retry {attempt + 1}/{self.max_retries}")
+                #self.logger.warning(f"Queue full. Retry {attempt + 1}/{self.max_retries}")
                 time.sleep(self.retry_delay)  # Wait before retrying
             except Exception as e:
-                self.logger.error(f"Error sending message: {e}")
+                #self.logger.error(f"Error sending message: {e}")
                 break  # Exit on unexpected errors
         else:
-            self.logger.error("Queue full. Message discarded after max retries.")
+            #self.logger.error("Queue full. Message discarded after max retries.")
+            pass
 
         # Ensure the message queue is closed
         mq.close()
 
 # Function to log messages
 def log_monitor(title, payload):
+    if not ENABLE_MONITORING:
+        return
     monitor = Monitor(payload, title)
     monitor.send_to_message_queue()
 

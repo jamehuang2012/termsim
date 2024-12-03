@@ -2,7 +2,7 @@ import datetime
 
 
 class ReceiptGenerator:
-    def __init__(self, term_num, record_num, host_invoice_num, host_seq_num, merch_invoice_num, card_num, card_type, date, amount, auth_num, hts_num, aid_num, tc_num, tvr_num, tsi_num,copy_type):
+    def __init__(self, term_num, record_num, host_invoice_num, host_seq_num, merch_invoice_num, card_num, card_type, date, amount, auth_num, hts_num, aid_num, tc_num, tvr_num, tsi_num,copy_type,transaction_name,app_name):
         self.term_num = term_num
         self.record_num = record_num
         self.host_invoice_num = host_invoice_num
@@ -19,11 +19,13 @@ class ReceiptGenerator:
         self.tvr_num = tvr_num
         self.tsi_num = tsi_num
         self.copy_type = copy_type
+        self.transaction_name = transaction_name
+        self.app_name = app_name
     def generate_receipt(self):
         receipt = "NUVEI TECHNOLOGIES".center(24) + "\n"
         receipt += "      MONTREAL, PQ\n\n"
-        receipt += "RECORD #{self.record_num:>16}\n".format(self=self)
         receipt += "TERM #{self.term_num:>18}\n".format(self=self)
+        receipt += "RECORD #{self.record_num:>16}\n".format(self=self)
         receipt += "HOST INVOICE #{self.host_invoice_num:>10}\n".format(self=self)
         receipt += "HOST SEQ #{self.host_seq_num:>14}\n".format(self=self)
         receipt += "MERCH INVOICE{self.merch_invoice_num:>11}\n".format(self=self)
@@ -32,15 +34,15 @@ class ReceiptGenerator:
         receipt += "{}{}\n".format(self.card_type, " "*23)
         receipt += "{}\n".format(self.date)
         receipt += "------------------------\n"
-        receipt += "PURCHASE       \n"
+        receipt += "{}\n".format(self.transaction_name)
         receipt += "TOTAL{self.amount:>19}\n".format(self=self)
         receipt += "------------------------\n\n"
         receipt += "AUTH#:{}".format(self.auth_num) + " "*9 + "B:0\n"
-        receipt += "HTS#:     {}{}\n".format(self.hts_num, " "*12)
+        receipt += "HTS#:     {}{}\n".format(self.hts_num, " "*18)
         receipt += "TRANSACTION".center(24) +  "\n"
         receipt += "APPROVED 000".center(24) + "\n"
         receipt += "THANK YOU".center(24) + "\n"
-        receipt += "\nCredit                  \n"
+        receipt += "\n{}\n".format(self.app_name)
         receipt += "AID:  {}{}\n".format(self.aid_num, " "*(16-len(str(self.aid_num))))
         receipt += "TC:   {}{}\n".format(self.tc_num, " "*16)
         receipt += "TVR:  {}{}\n".format(self.tvr_num, " "*16)

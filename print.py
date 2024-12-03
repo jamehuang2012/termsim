@@ -45,6 +45,23 @@ async def read_fifo(fifo_path, console):
     # Close the FIFO file descriptor when done
     os.close(fifo_fd)
 
+# write fifo
+
+
+async def write_receipt_fifo(fifo_path,data):
+    
+    # Check if the FIFO exists, create it if it doesn't
+    if not os.path.exists(fifo_path):
+        os.mkfifo(fifo_path)
+
+    # Open the FIFO in write mode synchronously
+    with open(fifo_path, 'w') as fifo:
+        fifo.write(data + '\n')
+    
+    # close the file
+    fifo.close()
+        
+
 # Main function to run the async loop
 async def main(fifo_path):
     console = Console()

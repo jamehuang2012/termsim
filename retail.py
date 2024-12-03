@@ -96,7 +96,7 @@ def main(stdscr):
     fields = list(amount_details.keys())
     current_field = 0  # Start from the first field
 
-    current_amount_detail = 0
+   
     current_features = 0
     current_credential = 0
 

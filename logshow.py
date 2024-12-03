@@ -41,7 +41,7 @@ async def read_message_queue(queue_name, console):
                 json_syntax = Syntax(
                     json.dumps(parsed_data, indent=2),
                     "json",
-                    theme="monokai",
+                    theme="rrt",
                     line_numbers=False,
                     word_wrap=True
                 )
@@ -50,7 +50,7 @@ async def read_message_queue(queue_name, console):
                 console.print(panel)
 
         except posix_ipc.BusyError:
-            await asyncio.sleep(0.5)
+            await asyncio.sleep(0.2)
 
 async def main():
     console = Console()

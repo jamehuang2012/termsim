@@ -1,5 +1,6 @@
 from enum import Enum
 
+from LoggerManager import LoggerManager
 import StringUtily
 
 
@@ -32,17 +33,20 @@ class TransactionData:
             cls._instance.responseMessage = ''
             cls._instance.transactionStatus = ''
             cls._instance.exchangeIdentification = ''
-            cls._instance.service_attribute = None
-            cls._instance.amount_qualifier = None
-            cls._instance.validity_duration = None
-            cls._instance.total_amount = None
-            cls._instance.moto_indicator = False
+            cls._instance.serviceAttribute = None
+            cls._instance.amountQualifier = None
+            cls._instance.validityDuration = None
+            cls._instance.totalAmount = None
+            cls._instance.motoIndicator = False
             cls._instance.purchaseAmount = 0.0
 
-            cls._instance.invoice_number = ''
-            cls._instance.message_function = ''
+            cls._instance.invoiceNumber = ''
+            cls._instance.messageFunction = ''
 
-
+            cls._instance.localReferenceNumber = ''
+            cls._instance.reconciliationIndentifier = 0
+            cls._instance.clerkId = ''
+            cls._instance.entryMode = ''
 
 
         # Return the Singleton instance
@@ -68,15 +72,28 @@ class TransactionData:
     def get_terminal_status_string(self):
         return self.terminalStatus
 
+    # Increase the batch number
+    def increase_batch_number(self):
+        self.reconciliationIndentifier += 1
+        log = LoggerManager.LoggerManager().logger
+        log.info(f"Batch number increased to {self.reconciliationIndentifier}")
+
     # Method to print the transaction data
     def __str__(self):
-        return (f"TransactionData(isRunning: {self.isRunning},"
-                f"ErrorScrenario: {self.get_status_string()}, tipAmount: {self.format_amount(self.tipAmount)}, "
-                f"cashback: {self.format_amount(self.cashback)}, surchargeFee: {self.format_amount(self.surchargeFee)}, "
-                f"serviceFee: {self.format_amount(self.serviceFee)}, enableSignature: {self.enableSignature}, "
-                f"currencyCode: {self.currencyCode}, splitPayment: {self.splitPayment}, "
-                f"splitAmount: {self.format_amount(self.splitAmount)}, terminalStatus: {self.get_terminal_status_string()}, "
-                f"message_function: {self.message_function}, transactionType: {self.transactionType}, identification: {self.identification} ")
+        return f"TransactionData(isRunning={self.isRunning}, status={self.status}, tipAmount={self.tipAmount}, " \
+               f"cashback={self.cashback}, surchargeFee={self.surchargeFee}, serviceFee={self.serviceFee}, " \
+               f"enableSignature={self.enableSignature}, currencyCode={self.currencyCode}, " \
+               f"splitPayment={self.splitPayment}, splitAmount={self.splitAmount}, " \
+               f"terminalStatus={self.terminalStatus}, transactionType={self.transactionType}, " \
+               f"identification={self.identification}, type={self.type}, respnseCode={self.respnseCode}, " \
+               f"responseMessage={self.responseMessage}, transactionStatus={self.transactionStatus}, " \
+               f"exchangeIdentification={self.exchangeIdentification}, serviceAttribute={self.serviceAttribute}, " \
+               f"amountQualifier={self.amountQualifier}, validityDuration={self.validityDuration}, " \
+               f"totalAmount={self.totalAmount}, motoIndicator={self.motoIndicator}, " \
+               f"purchaseAmount={self.purchaseAmount}, invoiceNumber={self.invoiceNumber}, " \
+               f"messageFunction={self.messageFunction}, localReferenceNumber={self.localReferenceNumber}, " \
+               f"reconciliationIndentifier={self.reconciliationIndentifier}, entryMode={self.entryMode}"
+    
                 
                 
 
@@ -96,18 +113,26 @@ class TransactionData:
         self.transactionType = StringUtily.ETransType.TT_SESSION_HEARTBEAT
         self.identification = ''
         self.type = ''
-        self.respnseCode = ''
+        self.responseCode = ''
         self.responseMessage = ''
         self.transactionStatus = ''
         self.exchangeIdentification = ''
-        self.service_attribute = None
-        self.amount_qualifier   = None
-        self.validity_duration  = None
-        self.total_amount       = None
-        self.moto_indicator     = False
+        self.serviceAttribute = None
+        self.amountQualifier   = None
+        self.validityDuration  = None
+        self.totalAmount       = None
+        self.motoIndicator     = False
         self.purchaseAmount     = 0.0
-        self.invoice_number     = ''
-        self.message_function   = ''
+        self.invoiceNumber     = ''
+        self.messageFunction   = ''
+        self.localReferenceNumber = ''    
+
+        self.reconciliationIndentifier = 0
+        self.entryMode = ''
+        self.clerkId = ''
+
+
+
 
 # Example usage
 if __name__ == "__main__":

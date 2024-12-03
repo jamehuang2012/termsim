@@ -71,6 +71,11 @@ class ParameterSingleton:
         self._params["authKey"] = auth_key
         self.save_parameters_to_json()
 
+    # Increase the batch number
+    def increase_batch_number(self):
+        self._params["reconciliationIndentifier"] += 1
+        self.save_parameters_to_json()
+
 # Example usage:
 if __name__ == "__main__":
     # Access the singleton instance

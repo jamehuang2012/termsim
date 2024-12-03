@@ -6,6 +6,51 @@ from Header import Header, Party
 import StringUtily
 
 
+class Host:
+    count: int
+    amount: int
+    trans_type: str
+    card_brand: str
+
+    def __init__(self, count: int, amount: int, trans_type: str, card_brand: str) -> None:
+        self.count = count
+        self.amount = amount
+        self.trans_type = trans_type
+        self.card_brand = card_brand
+
+    def to_dict(self) -> dict:
+        return {
+            "count": self.count,
+            "amount": self.amount
+        }
+
+class DataSource:
+    host: List[Host]
+    terminal: List[Host]
+
+    def __init__(self, host: List[Host], terminal: List[Host]) -> None:
+        self.host = host
+        self.terminal = terminal
+    
+    def to_dict(self) -> dict:
+        return {
+            "host": [h.to_dict() for h in self.host],
+            "terminal": [t.to_dict() for t in self.terminal]
+        }
+
+
+class BatchResponse:
+    data_source: DataSource
+
+    def __init__(self, data_source: DataSource) -> None:
+        self.data_source = data_source
+    
+    def to_dict(self) -> dict:
+        return {
+            "dataSource": self.data_source.to_dict()
+        }   
+    
+
 class TransactionIdentification:
     transaction_date_time: datetime
     transaction_reference: str
@@ -64,19 +109,19 @@ class ReceiptDetails:
     msk_pan: str
     card_aid: str
     card_lbl: str
-    emv_tag_tsi: int
+    emv_tag_tsi: str
     emv_tag_tvr: str
     balance_due: str
     account_type: str
     apprdecl_iso: str
     host_invoice: str
-    host_sequence: int
+    host_sequence: str
     record_number: str
-    invoice_number: int
+    invoice_number: str
     card_data_ntry_md: str
     emv_tag_cryptogram: str
 
-    def __init__(self, ref_id: str, msk_pan: str, card_aid: str, card_lbl: str, emv_tag_tsi: int, emv_tag_tvr: str, balance_due: str, account_type: str, apprdecl_iso: str, host_invoice: str, host_sequence: int, record_number: str, invoice_number: int, card_data_ntry_md: str, emv_tag_cryptogram: str) -> None:
+    def __init__(self, ref_id: str, msk_pan: str, card_aid: str, card_lbl: str, emv_tag_tsi: str, emv_tag_tvr: str, balance_due: str, account_type: str, apprdecl_iso: str, host_invoice: str, host_sequence: str, record_number: str, invoice_number: str, card_data_ntry_md: str, emv_tag_cryptogram: str) -> None:
         self.ref_id = ref_id
         self.msk_pan = msk_pan
         self.card_aid = card_aid
@@ -113,12 +158,12 @@ class ReceiptDetails:
 
 
 class DetailedAmount:
-    fees: int
+    fees: str
     cashback: str
     gratuity: str
     amount_goods_and_services: str
 
-    def __init__(self, fees: int, cashback: str, gratuity: str, amount_goods_and_services: str) -> None:
+    def __init__(self, fees: str, cashback: str, gratuity: str, amount_goods_and_services: str) -> None:
         self.fees = fees
         self.cashback = cashback
         self.gratuity = gratuity
@@ -203,9 +248,46 @@ class PaymentResponse:
             "receipt": [receipt.to_dict() for receipt in self.receipt],
             "retailerPaymentResult": self.retailer_payment_result.to_dict(),
             "saleReferenceIdentification": self.sale_reference_identification,
-            "poiTransactionIdentification": self.poi_transaction_identification.to_dict(),
+            "POITransactionIdentification": self.poi_transaction_identification.to_dict(),
             "saleTransactionIdentification": self.sale_transaction_identification.to_dict(),
         }
+
+
+class ReversalTransactionResult:
+    transaction_response: TransactionResponse
+    poi_reconciliation_identification: str
+
+    def __init__(self, transaction_response: TransactionResponse, poi_reconciliation_identification: str) -> None:
+        self.transaction_response = transaction_response
+        self.poi_reconciliation_identification = poi_reconciliation_identification
+
+    def to_dict(self) -> dict:
+        return {
+            "transactionResponse": self.transaction_response.to_dict(),
+            "POIReconciliationIdentification": self.poi_reconciliation_identification,
+        }
+
+
+class ReversalResponse:
+    receipt: List[Receipt]
+    reversal_transaction_result: ReversalTransactionResult
+    poi_transaction_identification: TransactionIdentification
+    sale_transaction_identification: TransactionIdentification
+
+    def __init__(self, receipt: List[Receipt], reversal_transaction_result: ReversalTransactionResult, poi_transaction_identification: TransactionIdentification, sale_transaction_identification: TransactionIdentification) -> None:
+        self.receipt = receipt
+        self.reversal_transaction_result = reversal_transaction_result
+        self.poi_transaction_identification = poi_transaction_identification
+        self.sale_transaction_identification = sale_transaction_identification
+    
+    def to_dict(self) -> dict:
+        return {
+            "receipt": [receipt.to_dict() for receipt in self.receipt],
+            "reversalTransactionResult": self.reversal_transaction_result.to_dict(),
+            "POITransactionIdentification": self.poi_transaction_identification.to_dict(),
+            "saleTransactionIdentification": self.sale_transaction_identification.to_dict(),
+        }
+
 
 
 class Response:
@@ -223,16 +305,38 @@ class Response:
 class ServiceResponse:
     response: Response
     payment_response: List[PaymentResponse]
+    reversal_response: ReversalResponse
+    batch_response: BatchResponse
 
-    def __init__(self, response: Response, payment_response: List[PaymentResponse]) -> None:
+    def __init__(self, response: Response, payment_response: List[PaymentResponse],reversal_response: ReversalResponse,batch_response: BatchResponse) -> None:
         self.response = response
         self.payment_response = payment_response
+        self.reversal_response = reversal_response
+        self.batch_response = batch_response
     
     def to_dict(self) -> dict:
-        return {
-            "response": self.response.to_dict(),
-            "paymentResponse": [payment_response.to_dict() for payment_response in self.payment_response],
-        }
+        # Create the dictionary with only necessary fields
+        response_dict = {}
+
+        response_dict["response"] = self.response.to_dict()
+        # check if payment_response list is not empty
+         # Check if payment_response is a list and contains PaymentResponse objects
+        if isinstance(self.payment_response, list):
+            response_dict["paymentResponse"] = [payment.to_dict() for payment in self.payment_response if payment is not None]
+        elif isinstance(self.payment_response, PaymentResponse):
+                # If it's a single PaymentResponse object, convert it to a list
+            response_dict["paymentResponse"] = [self.payment_response.to_dict()]
+
+        
+        # Only include 'reversalResponse' if it's not None
+        if self.reversal_response is not None:
+            response_dict["reversalResponse"] = self.reversal_response.to_dict()
+        
+        # Only include 'batchResponse' if it's not None
+        if self.batch_response is not None:
+            response_dict["batchResponse"] = self.batch_response.to_dict()
+
+        return response_dict
 
 
 class OCserviceResponse:
@@ -315,9 +419,20 @@ if __name__ == "__main__":
         transaction_identification
     )
 
-    service_response = ServiceResponse(response, [payment_response])
+   
+
+    reversal_response = ReversalResponse(
+        [receipt1, receipt2],
+        ReversalTransactionResult(transaction_response, "POIReconciliationID"),
+        transaction_identification,
+        transaction_identification
+    )
+
+    reversal_response = None
+
+    service_response = ServiceResponse(response,payment_response, reversal_response)
     oc_service_response = OCserviceResponse(hdr, service_response)
 
     pack_service_response = PackServiceResponse(oc_service_response)
     print(pack_service_response.to_dict())
-    
+
