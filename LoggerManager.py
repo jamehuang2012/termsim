@@ -1,5 +1,6 @@
 import logging
 from datetime import datetime
+import os
 
 class LoggerManager:
     __instance = None
@@ -17,6 +18,11 @@ class LoggerManager:
 
             # Get the current date and format the log file name
             log_file_name = datetime.now().strftime("log/log_%Y-%m-%d.txt")
+
+            # Create log folder if not exists
+           
+            if not os.path.exists("log"):
+                os.makedirs("log")
             
             # Create a FileHandler with the dynamic log file name
             file_handler = logging.FileHandler(log_file_name)

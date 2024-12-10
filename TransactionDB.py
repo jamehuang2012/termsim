@@ -5,7 +5,10 @@ class TransactionDB:
         self.connection = sqlite3.connect(db_name)
         self.create_table()
 
-    def create_table(self):
+
+    # Create the transaction table , add signature data with binary data type
+
+    def create_tansaaction_table(self):
         with self.connection:
             self.connection.execute('''
                 CREATE TABLE IF NOT EXISTS transactions (
@@ -43,9 +46,106 @@ class TransactionDB:
                     service_attribute TEXT,
                     amount_qualifier TEXT,
                     validity_duration INTEGER,
-                    moto_indicator BOOLEAN
+                    moto_indicator BOOLEAN,
+                    is_void BOOLEAN,
                 );
             ''')
+
+    # Create pre-auth table
+
+    def create_pre_auth_table(self):
+        with self.connection:
+            self.connection.execute('''
+                CREATE TABLE IF NOT EXISTS pre_auth (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    expireDate TEXT,
+                    entryMode TEXT,
+                    clerkId TEXT,
+                    Date TEXT,
+                    Time TEXT,
+                    batchNo TEXT,
+                    InvoiceNo TEXT,
+                    SeqNo TEXT,
+                    responseCode TEXT,
+                    responseMessage TEXT,
+                    transactionType TEXT,
+                    cardType TEXT,
+                    totalAmount REAL,
+                    purchaseAmount REAL,
+                    tipAmount REAL,
+                    cashbackAmount REAL,
+                    surchargeAmount REAL,
+                    serviceFee REAL,
+                    tid TEXT,
+                    mid TEXT,
+                    aid TEXT,
+                    tvr TEXT,
+                    emvCryptogram TEXT,
+                    emvapp TEXT,
+                    hostReferenceNo TEXT,
+                    hostSequenceNo TEXT,
+                    ResponseDate TEXT,
+                    ResponseTime TEXT,
+                    tsi TEXT,
+                    transactionReference TEXT,
+                    service_attribute TEXT,
+                    amount_qualifier TEXT,
+                    validity_duration INTEGER,
+                    moto_indicator BOOLEAN,
+                    is_complete BOOLEAN,
+                );
+            ''')
+
+    def create_print_history(self):
+        with self.connection:
+            self.connection.execute('''
+                CREATE TABLE IF NOT EXISTS print_history (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    expireDate TEXT,
+                    entryMode TEXT,
+                    clerkId TEXT,
+                    Date TEXT,
+                    Time TEXT,
+                    batchNo TEXT,
+                    InvoiceNo TEXT,
+                    SeqNo TEXT,
+                    responseCode TEXT,
+                    responseMessage TEXT,
+                    transactionType TEXT,
+                    cardType TEXT,
+                    totalAmount REAL,
+                    purchaseAmount REAL,
+                    tipAmount REAL,
+                    cashbackAmount REAL,
+                    surchargeAmount REAL,
+                    serviceFee REAL,
+                    tid TEXT,
+                    mid TEXT,
+                    aid TEXT,
+                    tvr TEXT,
+                    emvCryptogram TEXT,
+                    emvapp TEXT,
+                    hostReferenceNo TEXT,
+                    hostSequenceNo TEXT,
+                    ResponseDate TEXT,
+                    ResponseTime TEXT,
+                    tsi TEXT,
+                    transactionReference TEXT,
+                    service_attribute TEXT,
+                    amount_qualifier TEXT,
+                    validity_duration INTEGER,
+                    moto_indicator BOOLEAN,
+                    is_signed BOOLEAN,
+                    signature BLOB,
+                );
+            ''')
+
+    # Create those 3 tables
+    def create_table(self):
+        self.create_tansaaction_table()
+        self.create_pre_auth_table()
+        self.create_print_history()
+
 
     def insert_transaction(self, transaction_data):
         with self.connection:

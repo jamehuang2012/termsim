@@ -24,11 +24,21 @@ def to_class(c: Type[T], x: Any) -> dict:
 
 
 class POIGroupIdentification:
-    def __init__(self, exchange_action: str) -> None:
+    def __init__(self, exchange_action: str,exchange_identification:str) -> None:
         self.exchange_action = exchange_action
+        self.exchange_identification = exchange_identification
 
+    # exchange_identification might be None , if None then it will not be included in the dict
     def to_dict(self) -> dict:
-        return {"exchangeAction": self.exchange_action}
+        if self.exchange_identification:
+            return {
+                "exchangeAction": self.exchange_action,
+                "exchangeIdentification": str(self.exchange_identification),
+            }
+        else:
+            return {
+                "exchangeAction": self.exchange_action,
+            }
 
 
 class POIComponent:
@@ -71,9 +81,9 @@ class SessionResponse:
 class TransactionInProcess:
     transaction_status: str
     cancel_status: str
-    exchange_identification: UUID
+    exchange_identification: str
 
-    def __init__(self, transaction_status: str, cancel_status: str, exchange_identification: UUID) -> None:
+    def __init__(self, transaction_status: str, cancel_status: str, exchange_identification: str) -> None:
         self.transaction_status = transaction_status
         self.cancel_status = cancel_status
         self.exchange_identification = exchange_identification

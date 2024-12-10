@@ -130,18 +130,18 @@ def main(stdscr):
     # Set defualt terminal status
     TransactionData().terminalStatus = TerminalStatus.IDLE.name
     # Set  Tip amount
-    TransactionData().tid = ParameterSingleton.ParameterSingleton().get_tid()
-    TransactionData().authKey = ParameterSingleton.ParameterSingleton().get_auth_key()
+    # TransactionData().tid = ParameterSingleton.ParameterSingleton().get_tid()
+    # TransactionData().authKey = ParameterSingleton.ParameterSingleton().get_auth_key()
     TransactionData().tipAmount = amount_details["Tip"]
-    TransactionData().cashbackAmount = amount_details["Cashback"]
-    TransactionData().surchargeAmount = amount_details["Surcharge"]
-    TransactionData().feeAmount = amount_details["Fee"]
+    TransactionData().cashback = amount_details["Cashback"]
+    TransactionData().surchargeFee = amount_details["Surcharge"]
+    TransactionData().serviceFee = amount_details["Fee"]
     TransactionData().enableSignature = features["Send Signature"]
     TransactionData().currencyCode = features["Currency Code"]
     TransactionData().splitPayment = features["Split Payment"]
     TransactionData().splitAmount = features["Split Amount"]
     TransactionData().isRunning = True
-    TransactionData().status = TransactionStatus.NoneStatus.name
+    TransactionData().status = TransactionStatus.NoneStatus
 
   
 
@@ -188,13 +188,13 @@ def main(stdscr):
         # Set status of TransactionData 
 
         if selected_error_radio == 0:
-            TransactionData().status = TransactionStatus.Decline.name
+            TransactionData().status = TransactionStatus.Decline
         elif selected_error_radio == 1:
-            TransactionData().status = TransactionStatus.Cancellation.name
+            TransactionData().status = TransactionStatus.Cancellation
         elif selected_error_radio == 2:
-            TransactionData().status = TransactionStatus.NoResponse.name
+            TransactionData().status = TransactionStatus.NoResponse
         elif selected_error_radio == 3:
-            TransactionData().status = TransactionStatus.NoneStatus.name
+            TransactionData().status = TransactionStatus.NoneStatus
         
         
 

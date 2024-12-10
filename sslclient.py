@@ -1,5 +1,6 @@
 import socket
 import ssl
+from FIFOStatusSender import FIFOStatusSender
 from TransactionData import TransactionData
 import Unpack
 import LoggerManager
@@ -10,7 +11,7 @@ from ParameterSingleton import ParameterSingleton
 def doTransaction():
     context = ssl.create_default_context()
     context.check_hostname = False
-    context.verify_mode = ssl.CERT_NONE
+    context.verify_mode = ssl.CERT_REQUIRED
 
     # check TransactionData.isRunning
     if TransactionData().isRunning == False:
@@ -27,31 +28,47 @@ def doTransaction():
     log.debug("URL: %s", url)
     log.debug("Port: %s", port)
 
-
-    #print(Pack.packReuqest())
-    with socket.create_connection((url, port)) as sock:
-        with context.wrap_socket(sock, server_hostname= url) as ssock:
-            #print(ssock.version())
-            #print(ssock.cipher())
-            #print(ssock.getpeercert())
-            ssock.sendall(Pack.packReuqest())
-            result = b""
-            while True:
-                data = ssock.recv(4096)
-                if not data:
+    try:
+        #print(Pack.packReuqest())
+        with socket.create_connection((url, port)) as sock:
+            with context.wrap_socket(sock, server_hostname= url) as ssock:
+                #print(ssock.version())
+                #print(ssock.cipher())
+                #print(ssock.getpeercert())
+                ssock.sendall(Pack.packReuqest())
+                result = b""
+                while True:
+                    data = ssock.recv(4096)
+                    if not data:
+                        log = LoggerManager.LoggerManager().logger
+                        log.debug("No data received")
+                        break
+                
+                    result += data
                     log = LoggerManager.LoggerManager().logger
-                    log.debug("No data received")
+                    log.debug(result)
+
+                    Unpack.parseResponse(result)
+
                     break
-             
-                result += data
-                log = LoggerManager.LoggerManager().logger
-                log.debug(result)
+        
+                # Parse the response 
+    except Exception as e:
+        log = LoggerManager.LoggerManager().logger
+        log.error("Error: %s", e)
 
-                Unpack.parseResponse(result)
+        status_data = {
+            "TerminalStatus": "ERROR CONNECTION",
+            "TransactionStatus": "N/A",
+            "Response": "N/A",
+            "CancelStatus": "N/A"
+        }
 
-                break
-    
-            # Parse the response 
+        sender = FIFOStatusSender()
+        sender.send_status(status_data)
+       
+        
+        return
 
 
 #doTransaction()

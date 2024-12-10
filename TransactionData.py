@@ -47,6 +47,8 @@ class TransactionData:
             cls._instance.reconciliationIndentifier = 0
             cls._instance.clerkId = ''
             cls._instance.entryMode = ''
+            # Cancel status
+            cls._instance.cancelStatus = False
 
 
         # Return the Singleton instance
@@ -130,6 +132,8 @@ class TransactionData:
         self.reconciliationIndentifier = 0
         self.entryMode = ''
         self.clerkId = ''
+        # Cancel status 
+        self.cancelStatus = False
 
 
 

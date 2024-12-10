@@ -3,6 +3,9 @@
 # Terminal status enum
 from enum import Enum
 import random
+from PIL import Image, ImageDraw, ImageFont
+import base64
+import io
 
 
 class TerminalStatus(Enum):
@@ -175,7 +178,60 @@ def generate_host_invoicenum():
 def generate_hts():
     # format 7 digit random number
     return str(random.randint(1000000, 9999999))
+
+# Get CardDataEntryMode
+def get_card_data_entry_mode(entry_mode):
+
+    if entry_mode == EntryMode.EM_MANUAL:
+        return "KEYD"
+    elif entry_mode == EntryMode.EM_SWIPED:
+        return "MGST"
+    elif entry_mode == EntryMode.EM_SMC:
+        return "CICC"
+    elif entry_mode == EntryMode.EM_RFID:
+        return "ECTL"
+    else:
+        return "CICC"
     
+
+def generate_signature(text="NUVEI", font_size=50):
+    # Create a blank image with a white background
+    image = Image.new("RGB", (300, 100), "white")
+    draw = ImageDraw.Draw(image)
+    
+    # Load a cursive-like font
+    try:
+        font = ImageFont.truetype("Arial.ttf", font_size)  # Replace 'arial.ttf' with a path to a cursive font if desired
+    except IOError:
+        raise Exception("Font file not found. Ensure a .ttf font is available.")
+
+    # Calculate text size and position using textbbox
+    bbox = draw.textbbox((0, 0), text, font=font)
+    text_width = bbox[2] - bbox[0]
+    text_height = bbox[3] - bbox[1]
+    
+    # Center the text
+    position = ((image.width - text_width) / 2, (image.height - text_height) / 2)
+    
+    # Draw the text on the image
+    draw.text(position, text, fill="black", font=font)
+    
+    # Save the image to a BytesIO object
+    buffered = io.BytesIO()
+    image.save(buffered, format="PNG")
+    
+    # Encode the image to Base64
+    base64_encoded = base64.b64encode(buffered.getvalue()).decode("utf-8")
+    return base64_encoded
+
+# load signature from image file
+def load_signature_from_image(image_path):
+    try:
+        with open(image_path, "rb") as image_file:
+            base64_encoded = base64.b64encode(image_file.read()).decode("utf-8")
+        return base64_encoded
+    except FileNotFoundError:
+        raise Exception("Image file not found. Ensure the path is correct.")
 
 # main function
 if __name__ == "__main__":

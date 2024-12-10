@@ -14,7 +14,7 @@ import StringUtily
 
 from TransactionDB import TransactionDB
 from TransactionData import TransactionData
-from card import get_aid_number, get_card_data_entry_mode, get_card_type, get_masked_pan, get_random_card
+from card import get_aid_number, get_app_name, get_card_type, get_masked_pan, get_random_card
 from print import write_receipt_fifo
 from receipt import ReceiptGenerator
 import sessionmgr
@@ -55,8 +55,44 @@ def  createRequest():
     log = LoggerManager.LoggerManager().logger
     log.debug(v.transactionType)
 
+    if v.status in [ StringUtily.TransactionStatus.Cancellation]:
+        v.cancelStatus = True
+ 
+    if v.cancelStatus == True and TransactionData().transactionStatus == "ACPT":
+        
+        initg_pty = Party(tid,"TID",authkey)
+        #rcpt_pty = sessionmgr.InitiatingParty(pid,"","PID")
 
-    if v.transactionType in [StringUtily.ETransType.TT_SESSION_HEARTBEAT, StringUtily.ETransType.TT_SESSION_MGR_PAT]:
+
+        message_function = StringUtily.get_message_function(StringUtily.ETransType.TT_SESSION_HEARTBEAT)
+
+        #if (v.transactionType == Constants.TransctionType.SALE):
+        #    print("SALE")
+        #elif (v.transactionType == Constants.TransctionType.SESSIONMGR):
+        #    msgFunction = "SASQ"
+
+        hdr = Header(message_function,"3.0",random_uuid,utc_string,initg_pty)
+
+        #print(json.dumps(hdr.to_dict()))
+        log = LoggerManager.LoggerManager().logger
+        log.debug(TransactionData().exchangeIdentification)
+
+        poi_grp_id = sessionmgr.POIGroupIdentification(exchange_action="CUCL",exchange_identification=TransactionData().exchangeIdentification)
+
+        poi_cmpnt = sessionmgr.POIComponent(poi_grp_id,TransactionData().terminalStatus)
+
+        ssn_mgmt_req = sessionmgr.SessionManagementRequest(poi_cmpnt)
+        
+        oc_ssn_mgmt_req = sessionmgr.OCsessionManagementRequest(hdr,ssn_mgmt_req)
+
+        request = sessionmgr.Request(oc_ssn_mgmt_req)
+
+        v.cancelStatus = False
+
+        return json.dumps(request.to_dict())
+     
+
+    elif v.transactionType in [StringUtily.ETransType.TT_SESSION_HEARTBEAT, StringUtily.ETransType.TT_SESSION_MGR_PAT] or v.status in [StringUtily.TransactionStatus.NoResponse, StringUtily.TransactionStatus.Cancellation]:
     
         log.debug("Session Management Request")
 
@@ -75,7 +111,7 @@ def  createRequest():
 
         #print(json.dumps(hdr.to_dict()))
 
-        poi_grp_id = sessionmgr.POIGroupIdentification("NOTI")
+        poi_grp_id = sessionmgr.POIGroupIdentification("NOTI",None)
 
         poi_cmpnt = sessionmgr.POIComponent(poi_grp_id,TransactionData().terminalStatus)
 
@@ -87,9 +123,9 @@ def  createRequest():
 
         return json.dumps(request.to_dict())
     elif v.transactionType in [StringUtily.ETransType.TT_SALE, StringUtily.ETransType.TT_REFUND, 
-                               StringUtily.ETransType.TT_VOID, StringUtily.ETransType.TT_CREDIT_PREAUTH,
-                               StringUtily.ETransType.TT_CREDIT_PREAUTH_COMPLETION, StringUtily.ETransType.TT_TIP_ADJUSTMENT,
-                               StringUtily.ETransType.TT_CREDIT_INCREMENTAL_AUTH,
+                                StringUtily.ETransType.TT_CREDIT_PREAUTH,
+                                StringUtily.ETransType.TT_TIP_ADJUSTMENT,
+                               
                                StringUtily.ETransType.TT_CRYPTO, StringUtily.ETransType.TT_MOTO]:
         message_function = StringUtily.get_response_message_function(v.transactionType)
 
@@ -110,7 +146,6 @@ def  createRequest():
 
         hdr = Header(message_function,"3.0",random_uuid,utc_string,initg_pty,rcpt_pty)
 
-        response = Response("APPR")  # Successful response code
 
 
         TransactionData().entryMode = StringUtily.EntryMode.EM_SMC
@@ -160,24 +195,9 @@ def  createRequest():
 
         card_type_name = get_card_type(card)
         
-        app_name = "MASTERCARD"
+        app_name = get_app_name(card)
 
-        if card_type_name == "VISA":
-            app_name = "VISA Credit"
-        elif card_type_name == "AMEX":
-            app_name = "American Express"
-        elif card_type_name == "DISCOVER":
-            app_name = "DISCOVER"
-        elif card_type_name == "DINERS":
-            app_name = "DINERS"
-        elif card_type_name == "JCB":
-            app_name = "JCB"
-        elif card_type_name == "UNIONPAY":
-            app_name = "UNIONPAY"
-        elif card_type_name == "MC":
-            app_name = "MASTERCARD"
-
-        entry_mode = get_card_data_entry_mode(TransactionData().entryMode)        
+        entry_mode = StringUtily.get_card_data_entry_mode(TransactionData().entryMode)        
             
 
         r1 = ReceiptGenerator(term_num, record_num, host_invoice_num, host_seq_num, merch_invoice_num, card_num, card_type, date, amount, auth_num, hts_num, aid_num, tc_num, tvr_num, tsi_num, copy_type,transaction_name,app_name)
@@ -207,10 +227,24 @@ def  createRequest():
             datetime.datetime.now(), record_num
         )
 
+        response = None
+        
+        if v.status in [StringUtily.TransactionStatus.Decline]:
+            response = Response("DECL")
+        else:
+            response = Response("APPR")  # Successful response code
+
+
+
         detailed_amount = DetailedAmount("0.00", "0.00", "0.00", "0.00")
         transaction_details = TransactionDetails(TransactionData().totalAmount, detailed_amount)
 
         response_to_authorisation = ResponseToAuthorisation("APPR")
+
+        if v.status in [StringUtily.TransactionStatus.Decline]:
+            response_to_authorisation = ResponseToAuthorisation("DECL")
+
+
         authorisation_result = AuthorisationResult(auth_num, response_to_authorisation)
 
 
@@ -219,12 +253,19 @@ def  createRequest():
        
 
         receipt_details = ReceiptDetails(
-           ref_id=record_num, record_number=record_num,msk_pan=card_num,card_aid=aid_num,card_lbl=card_type,emv_tag_tsi=tsi_num,emv_tag_tvr=tvr_num,balance_due=amount,account_type=app_name,apprdecl_iso="APPR",host_invoice=host_invoice_num,host_sequence=host_seq_num,invoice_number=merch_invoice_num,card_data_ntry_md=entry_mode,emv_tag_cryptogram=tc_num)
-        
+           ref_id=record_num, record_number=record_num,msk_pan=card_num,card_aid=aid_num,card_lbl=app_name,emv_tag_tsi=tsi_num,emv_tag_tvr=tvr_num,balance_due=amount,account_type=app_name,apprdecl_iso="APPR",host_invoice=host_invoice_num,host_sequence=host_seq_num,invoice_number=merch_invoice_num,card_data_ntry_md=entry_mode,emv_tag_cryptogram=tc_num)
+
+        # generate signature
+        #signature = StringUtily.generate_signature(text="NTS",font_size=30)
+
+        signature = ""
+
+        if TransactionData().enableSignature:
+            signature = StringUtily.load_signature_from_image("signature.png")
 
 
         transaction_response = TransactionResponse(
-            "", receipt_details, transaction_details, authorisation_result
+            signature, receipt_details, transaction_details, authorisation_result
         )
 
 
@@ -265,6 +306,10 @@ def  createRequest():
 
 
         batch_response = None
+
+        if TransactionData().status not in [StringUtily.TransactionStatus.NoneStatus]:
+            payment_response = None
+            reversal_response = None
 
         service_response = ServiceResponse(response, [payment_response],reversal_response,batch_response)
         oc_service_response = OCserviceResponse(hdr, service_response)
@@ -313,6 +358,25 @@ def  createRequest():
         sender.send_status(status_data)
        
         return json.dumps(request.to_dict())
+    
+    elif v.transactionType in [StringUtily.ETransType.TT_VOID,StringUtily.ETransType.TT_CREDIT_PREAUTH_COMPLETION,
+                               StringUtily.ETransType.TT_CREDIT_INCREMENTAL_AUTH]:
+        # Void Response
+        message_function = StringUtily.get_response_message_function(v.transactionType)
+
+        initg_pty = Party(tid,"TID",authkey)
+        rcpt_pty = Party(TransactionData().identification,TransactionData().type)
+
+        now = datetime.datetime.utcnow()
+        utc_string = now.strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+
+        hdr = Header(message_function,"3.0",random_uuid,utc_string,initg_pty,rcpt_pty)
+
+        response = Response("APPR")
+
+        # if response is successful, increment the batch number
+        if response.responseCode == "APPR":
+            p.increment_batch_number()
     elif v.transactionType in [StringUtily.ETransType.TT_BATCH_CLOSE_GENERAL]:
         # Batch Close Response
         message_function = StringUtily.get_response_message_function(v.transactionType)

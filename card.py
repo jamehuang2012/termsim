@@ -57,20 +57,10 @@ def get_card_type(card):
 # Get AID number
 def get_aid_number(card):
     return card['AID']
-
-# Get CardDataEntryMode
-def get_card_data_entry_mode(entry_mode):
-
-    if entry_mode == EntryMode.EM_MANUAL:
-        return "KEYD"
-    elif entry_mode == EntryMode.EM_SWIPED:
-        return "MGST"
-    elif entry_mode == EntryMode.EM_SMC:
-        return "CICC"
-    elif entry_mode == EntryMode.EM_RFID:
-        return "ECTL"
-    else:
-        return "CICC"
+    
+# Get application name
+def get_app_name(card):
+    return card['AppName']
 
 # main function
 if __name__ == "__main__":

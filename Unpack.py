@@ -54,6 +54,7 @@ def parseResponse(packed_data):
 
             if ocsession_response.session_management_response.transaction_in_process.cancel_status == "PEND":
                 CancelStatus = "PEND"
+                TransactionData().cancelStatus = True
 
         else:
             TransactionData().transactionStatus = "N/A"
