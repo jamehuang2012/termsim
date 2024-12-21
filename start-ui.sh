@@ -8,7 +8,7 @@ if [ "x$MODE" == "xdaemon" ]; then
 fi
 
 # Define session and window names
-session="$USER"
+session="Termsim"
 
 # Get terminal dimensions
 lines="$(tput lines)"

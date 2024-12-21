@@ -1,7 +1,6 @@
-# Use an official Python image as a base
 FROM python:3.9-slim
 
-# Install system dependencies including tmux, tini, apt-utils, and build tools
+# Install essential system utilities including tmux and bash
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
@@ -11,15 +10,16 @@ RUN apt-get update && \
     tmux \
     bash \
     tini \
-    apt-utils && \
-    rm -rf /var/lib/apt/lists/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
 WORKDIR /app
 
-# Copy the project files into the container
+# Copy project files into the container
 COPY . /app
 
+# Install Python dependencies (if any are needed)
+# Uncomment and edit as required
 # Install Python dependencies
 RUN pip install --no-cache-dir \
     aiofile==3.9.0 \
@@ -35,9 +35,13 @@ RUN pip install --no-cache-dir \
     python-dateutil==2.8.2
 
 # Make the start_ui.sh script executable
+
+
+# Make the main script executable
 RUN chmod +x start-ui.sh
 
-# Set tini as the entrypoint and start the script
+# Use tini as entrypoint for better container process management
 ENTRYPOINT ["/usr/bin/tini", "--"]
-#CMD ["/bin/bash", "./start_ui.sh"]
+#CMD ["/bin/bash", "/app/script.sh"]
+
 

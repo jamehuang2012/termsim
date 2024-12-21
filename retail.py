@@ -74,6 +74,8 @@ def doThread(stop_event):
         log.debug("Thread Running")        
         client.doTransaction()
         time.sleep(5)
+        # kill all tmux sesssion
+        os.system("tmux kill-session -a")
 
 
 # Main function to handle curses
