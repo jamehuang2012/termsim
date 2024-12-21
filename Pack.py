@@ -179,7 +179,13 @@ def  createRequest():
         elif v.transactionType == StringUtily.ETransType.TT_VOID:
             transaction_name = "VOID"
         elif v.transactionType == StringUtily.ETransType.TT_CREDIT_PREAUTH:
-            transaction_name = "PREAUTH"
+            if (v.serviceAttribute == "IRES"):
+                transaction_name = "PREAUTH"
+            elif (v.serviceAttribute == "URES"):
+                transaction_name = "INCREMENTAL AUTH"
+            else:
+                transaction_name = "PREAUTH"
+
         elif v.transactionType == StringUtily.ETransType.TT_CREDIT_PREAUTH_COMPLETION:
             transaction_name = "PREAUTH COMPLETION"
         elif v.transactionType == StringUtily.ETransType.TT_TIP_ADJUSTMENT:
