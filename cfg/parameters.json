@@ -1,8 +1,8 @@
 {
     "parameters": {
-        "url": "terminal-poi-sandbox.nuvei.com",
+        "url": "terminal-poi.nuvei.com",
         "port": 18080,
-        "tid": "12300337",
-        "authKey": "b68b525d-6c18-40fe-9e39-132fb5a687da"
+        "tid": "10065711",
+        "authKey": "d606ffc1-93d0-4e64-8d4d-c36cd637dc41"
     }
 }

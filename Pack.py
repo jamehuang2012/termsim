@@ -327,25 +327,25 @@ def  createRequest():
 
 
         #Insert the transaction data into database from TransactoinDB    
-        try:
-            db = TransactionDB()
+        # try:
+        #     db = TransactionDB()
 
-            transaction_data = (
-                "", TransactionData().entryMode.name, TransactionData().clerkId, now.strftime("%Y-%m-%d"), now.strftime("%H:%M:%S"), TransactionData().reconciliationIndentifier,
-                TransactionData().invoiceNumber, record_num,  auth_num,TransactionData().responseMessage, TransactionData().transactionType.name, card_type_name, amount,
-                TransactionData().purchaseAmount, TransactionData().tipAmount, TransactionData().cashback, TransactionData().surchargeFee,TransactionData().serviceFee, tid, "mid", aid_num,
-                tvr_num, tc_num, app_name, host_seq_num, host_seq_num,
-                datetime.datetime.now().strftime("%Y-%m-%d"), datetime.datetime.now().strftime("%H:%M:%S"), tsi_num, record_num, TransactionData().serviceAttribute,
-               TransactionData().amountQualifier, TransactionData().validityDuration, TransactionData().motoIndicator
-            )
+        #     transaction_data = (
+        #         "", TransactionData().entryMode.name, TransactionData().clerkId, now.strftime("%Y-%m-%d"), now.strftime("%H:%M:%S"), TransactionData().reconciliationIndentifier,
+        #         TransactionData().invoiceNumber, record_num,  auth_num,TransactionData().responseMessage, TransactionData().transactionType.name, card_type_name, amount,
+        #         TransactionData().purchaseAmount, TransactionData().tipAmount, TransactionData().cashback, TransactionData().surchargeFee,TransactionData().serviceFee, tid, "mid", aid_num,
+        #         tvr_num, tc_num, app_name, host_seq_num, host_seq_num,
+        #         datetime.datetime.now().strftime("%Y-%m-%d"), datetime.datetime.now().strftime("%H:%M:%S"), tsi_num, record_num, TransactionData().serviceAttribute,
+        #        TransactionData().amountQualifier, TransactionData().validityDuration, TransactionData().motoIndicator
+        #     )
 
-            # Log the transaction data
-            log.info("Transaction Data: %s", transaction_data)
+        #     # Log the transaction data
+        #     log.info("Transaction Data: %s", transaction_data)
 
-            db.insert_transaction(transaction_data)
-            db.close()
-        except Exception as e:
-            log.error("Error inserting transaction data into database: %s", e)
+        #     db.insert_transaction(transaction_data)
+        #     db.close()
+        # except Exception as e:
+        #     log.error("Error inserting transaction data into database: %s", e)
 
         
 
@@ -435,5 +435,9 @@ def packReuqest():
     log = LoggerManager.LoggerManager().logger
     log.debug("Packed Data: %s", req)
     log.debug("length of packed data: %d", len(req))
+
+    # log packed data with hex format
+    log.debug("Packed Data: %s", packed_data.hex())
+
     return packed_data
 

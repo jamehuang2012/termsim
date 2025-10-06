@@ -1,4 +1,3 @@
-import curses
 import json
 import os
 import re
@@ -9,7 +8,7 @@ import sslclient as client
 import threading
 import time
 import LoggerManager
-
+import curses
 
 
 # Options
@@ -74,8 +73,9 @@ def doThread(stop_event):
         log.debug("Thread Running")        
         client.doTransaction()
         time.sleep(5)
-        # kill all tmux sesssion
-        os.system("tmux kill-session -a")
+      
+     # kill all tmux sesssion
+    os.system("tmux kill-server")
 
 
 # Main function to handle curses
@@ -149,10 +149,11 @@ def main(stdscr):
 
     while True:
         stdscr.clear()
+        
 
         # Instruction line
         stdscr.attron(curses.color_pair(3))
-        stdscr.addstr(1, 10, "NUVEI Terminal Simulator. Press 'q' to quit.")
+        stdscr.addstr(1, 10, "NUVEI Terminal Simulator. Press 'q' to quit all sessions.")
         stdscr.attroff(curses.color_pair(3))
 
         # Display radio options

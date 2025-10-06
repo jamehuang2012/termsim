@@ -46,7 +46,7 @@ function create-ui() {
     tmux split-window -t "$session:1.4" -v -p 25 -d 'python3 status.py /tmp/status_fifo'
 
     # Select the window to view
-    tmux select-window -t "$session:1.1"
+    tmux select-window -t "$session:1.2"
 
     # Attach to the tmux session
     tmux -2 attach-session -t "$session"
